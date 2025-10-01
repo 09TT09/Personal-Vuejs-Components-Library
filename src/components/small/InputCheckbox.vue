@@ -98,6 +98,7 @@
     align-items: center;
     height: 25px;
     width: 25px;
+    margin: 3px;
     border: solid rgb(37, 37, 37) 2px;
     border-radius: 3px;
     background-color: rgb(255, 255, 255);

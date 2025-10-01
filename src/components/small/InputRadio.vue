@@ -77,6 +77,7 @@
     position: relative;
     height: 20px;
     width: 20px;
+    margin: 3px;
     border: solid rgb(37, 37, 37) 2px;
     border-radius: 100%;
     background-color: rgb(255, 255, 255);

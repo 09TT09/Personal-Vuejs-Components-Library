@@ -102,6 +102,7 @@
 
 <style scoped>
   .input_text {
+    box-sizing: content-box;
     padding: 5px 10px;
     height: 30px;
     font-size: 16px;

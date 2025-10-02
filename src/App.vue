@@ -4,8 +4,9 @@
   import Button from '@/components/small/Button.vue';
   import A from "@/components/small/A.vue";
   import InputText from "@/components/small/InputText.vue";
-  import InputCheckbox from "./components/small/InputCheckbox.vue";
-  import InputRadio from "./components/small/InputRadio.vue";
+  import InputCheckbox from "@/components/small/InputCheckbox.vue";
+  import InputRadio from "@/components/small/InputRadio.vue";
+  import Textarea from "@/components/small/Textarea.vue";
 
   const form = reactive({
     button: 0,
@@ -17,6 +18,7 @@
     inputUrl: 'https://www.google.com',
     inputCheckbox: false,
     inputRadio: '-',
+    textarea: 'This is a text'
   });
 
   const elements = {
@@ -58,6 +60,9 @@
     "inputRadio": {
       "1": {name: "inputRadio", value: "1000"},
       "2": {name: "inputRadio", value: "2000"}
+    },
+    "textarea": {
+      name: "textarea"
     }
   }
 
@@ -107,6 +112,10 @@
         <InputRadio v-model="form['inputRadio']" :attributes="elements['inputRadio']['1']" />
         <InputRadio v-model="form['inputRadio']" :attributes="elements['inputRadio']['2']" />
         {{ form['inputRadio'] }}
+      </div>
+      <div>
+        <Textarea v-model="form['textarea']" :attributes="elements['textarea']" />
+        {{ form['textarea'] }}
       </div>
     </div>
   </section>

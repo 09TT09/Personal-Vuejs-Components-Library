@@ -7,6 +7,7 @@
   import InputCheckbox from "@/components/small/InputCheckbox.vue";
   import InputRadio from "@/components/small/InputRadio.vue";
   import Textarea from "@/components/small/Textarea.vue";
+  import Ul from "@/components/small/Ul.vue";
 
   const form = reactive({
     button: 0,
@@ -63,6 +64,13 @@
     },
     "textarea": {
       name: "textarea"
+    },
+    "ul": {
+      id: "ul",
+      li: [
+        {html: "<b>Elem 1</b>", id: "li-1"},
+        {html: "<i>Elem 2</i>", id: "li-2"},
+      ]
     }
   }
 
@@ -116,6 +124,9 @@
       <div>
         <Textarea v-model="form['textarea']" :attributes="elements['textarea']" />
         {{ form['textarea'] }}
+      </div>
+      <div>
+        <Ul :attributes="elements['ul']" />
       </div>
     </div>
   </section>

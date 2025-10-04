@@ -8,6 +8,7 @@
   import InputRadio from "@/components/small/InputRadio.vue";
   import Textarea from "@/components/small/Textarea.vue";
   import Ul from "@/components/small/Ul.vue";
+  import Select from "@/components/small/Select.vue";
 
   const form = reactive({
     button: 0,
@@ -19,7 +20,8 @@
     inputUrl: 'https://www.google.com',
     inputCheckbox: false,
     inputRadio: '-',
-    textarea: 'This is a text'
+    textarea: 'This is a text',
+    select: 'Option 2',
   });
 
   const elements = {
@@ -70,6 +72,14 @@
       li: [
         {html: "<b>Elem 1</b>", id: "li-1"},
         {html: "<i>Elem 2</i>", id: "li-2"},
+      ]
+    },
+    "select": {
+      name: "select",
+      option: [
+        {html: "Select 1", value: "Option 1", disabled: true},
+        {html: "Select 2", value: "Option 2", selected: true},
+        {html: "Select 3", value: "Option 3"},
       ]
     }
   }
@@ -127,6 +137,10 @@
       </div>
       <div>
         <Ul :attributes="elements['ul']" />
+      </div>
+      <div>
+        <Select v-model="form['select']" :attributes="elements['select']" />
+        {{ form['select'] }}
       </div>
     </div>
   </section>

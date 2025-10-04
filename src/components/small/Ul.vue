@@ -5,8 +5,8 @@
    * Li Interface
    */
   interface LiAttributes {
+    html?: string
     id?: string
-    html: string
   }
 
   /**

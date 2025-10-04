@@ -105,6 +105,7 @@
     box-sizing: content-box;
     padding: 5px 10px;
     height: 30px;
+    min-width: 180px;
     font-size: 16px;
     border-radius: 3px;
     border: solid rgb(37, 37, 37) 2px;

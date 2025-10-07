@@ -9,6 +9,7 @@
   import Textarea from "@/components/small/Textarea.vue";
   import Ul from "@/components/small/Ul.vue";
   import Select from "@/components/small/Select.vue";
+  import Label from "@/components/small/Label.vue";
 
   const form = reactive({
     button: 0,
@@ -81,6 +82,10 @@
         {html: "Select 2", value: "Option 2", selected: true},
         {html: "Select 3", value: "Option 3"},
       ]
+    },
+    "label": {
+      html: "Label input text",
+      for: "inputNumber"
     }
   }
 
@@ -141,6 +146,9 @@
       <div>
         <Select v-model="form['select']" :attributes="elements['select']" />
         {{ form['select'] }}
+      </div>
+      <div>
+        <Label :attributes="elements['label']" />
       </div>
     </div>
   </section>

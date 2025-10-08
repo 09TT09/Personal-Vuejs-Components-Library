@@ -10,6 +10,7 @@
   import Ul from "@/components/small/Ul.vue";
   import Select from "@/components/small/Select.vue";
   import Label from "@/components/small/Label.vue";
+  import P from "@/components/small/P.vue";
 
   const form = reactive({
     button: 0,
@@ -32,7 +33,7 @@
     "a": {
       href: "/",
       target: "_blank" as const,
-      text: "Link",
+      html: "Link",
     },
     "inputText": {
       type: "text" as const,
@@ -86,6 +87,9 @@
     "label": {
       html: "Label input text",
       for: "inputNumber"
+    },
+    "p": {
+      html: "Paragraph",
     }
   }
 
@@ -149,6 +153,9 @@
       </div>
       <div>
         <Label :attributes="elements['label']" />
+      </div>
+      <div>
+        <P :attributes="elements['p']" />
       </div>
     </div>
   </section>

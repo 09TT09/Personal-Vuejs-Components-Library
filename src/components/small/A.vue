@@ -13,7 +13,7 @@
     tabindex?: number | string
     target?: "_blank" | "_parent" | "_self" | "_top"
     type?: string
-    text?: string
+    html?: string
   }
 
   /**
@@ -35,7 +35,7 @@
     tabindex: undefined,
     target: undefined,
     type: undefined,
-    text: undefined,
+    html: undefined,
   }
 
   /**
@@ -58,7 +58,7 @@
     :tabindex="attributes.tabindex"
     :target="attributes.target"
     :type="attributes.target"
-    v-html="attributes.text"
+    v-html="attributes.html"
   ></a>
 </template>
 

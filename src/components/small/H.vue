@@ -2,32 +2,34 @@
   import { computed } from 'vue'
 
   /**
-   * P Interface
+   * H Interface
    */
-  interface PAttributes {
-    elementtiming?: string 
+  interface HAttributes {
+    elementtiming?: string
     id?: string
     html?: string
+    level?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6"
   }
 
   /**
-   * P Props
+   * H Props
    */
   const props = defineProps<{
-    'attributes': PAttributes
+    'attributes': HAttributes
   }>()
 
   /**
-   * Default P Attributes
+   * Default H Attributes
    */
-  const defaultAttributes: Partial<PAttributes> = {
+  const defaultAttributes: Partial<HAttributes> = {
     elementtiming: undefined,
     id: undefined,
     html: undefined,
+    level: "h1",
   }
 
   /**
-   * P Compute Attributes
+   * H Compute Attributes
    */
   const attributes = computed(() => ({
     ...defaultAttributes,
@@ -36,16 +38,17 @@
 </script>
 
 <template>
-  <p
-    class="p"
+  <component
+    class="h"
     :elementtiming="attributes.elementtiming"
     :id="attributes.id"
+    :is="attributes.level"
     v-html="attributes.html"
-  ></p>
+  />
 </template>
 
 <style scoped>
-  .p {
+  .h {
     margin: 0;
   }
 </style>

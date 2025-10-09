@@ -1,6 +1,7 @@
 <script setup lang="ts">
   import "@/../public/styles/main.css"
   import { reactive } from "vue";
+
   import Button from '@/components/small/Button.vue';
   import A from "@/components/small/A.vue";
   import InputText from "@/components/small/InputText.vue";
@@ -8,9 +9,14 @@
   import InputRadio from "@/components/small/InputRadio.vue";
   import Textarea from "@/components/small/Textarea.vue";
   import Ul from "@/components/small/Ul.vue";
+  import Ol from "./components/small/Ol.vue";
   import Select from "@/components/small/Select.vue";
   import Label from "@/components/small/Label.vue";
   import P from "@/components/small/P.vue";
+  import H from "@/components/small/H.vue";
+  import Img from "@/components/small/Img.vue";
+
+  import ImageTest1 from "@/../public/images/image-test-1.png";
 
   const form = reactive({
     button: 0,
@@ -76,6 +82,13 @@
         {html: "<i>Elem 2</i>", id: "li-2"},
       ]
     },
+    "ol": {
+      id: "ol",
+      li: [
+        {html: "<b>Elem 1</b>", id: "li-1"},
+        {html: "<i>Elem 2</i>", id: "li-2"},
+      ]
+    },
     "select": {
       name: "select",
       option: [
@@ -90,7 +103,18 @@
     },
     "p": {
       html: "Paragraph",
-    }
+    },
+    "h1": { level: "h1" as const, html: "H1" },
+    "h2": { level: "h2" as const, html: "H2" },
+    "h3": { level: "h3" as const, html: "H3" },
+    "h4": { level: "h4" as const, html: "H4" },
+    "h5": { level: "h5" as const, html: "H5" },
+    "h6": { level: "h6" as const, html: "H6" },
+    "img": {
+      src: ImageTest1,
+      width: 250,
+      height: 216,
+    },
   }
 
   function onButtonClick(event: MouseEvent) {
@@ -148,6 +172,9 @@
         <Ul :attributes="elements['ul']" />
       </div>
       <div>
+        <Ol :attributes="elements['ol']" />
+      </div>
+      <div>
         <Select v-model="form['select']" :attributes="elements['select']" />
         {{ form['select'] }}
       </div>
@@ -156,6 +183,17 @@
       </div>
       <div>
         <P :attributes="elements['p']" />
+      </div>
+      <div>
+        <H :attributes="elements['h1']" />
+        <H :attributes="elements['h2']" />
+        <H :attributes="elements['h3']" />
+        <H :attributes="elements['h4']" />
+        <H :attributes="elements['h5']" />
+        <H :attributes="elements['h6']" />
+      </div>
+      <div>
+        <Img :attributes="elements['img']" />
       </div>
     </div>
   </section>

@@ -15,6 +15,9 @@
   import P from "@/components/small/P.vue";
   import H from "@/components/small/H.vue";
   import Img from "@/components/small/Img.vue";
+  import Div from "@/components/small/Div.vue";
+  import Span from "@/components/small/Span.vue";
+  import Form from "@/components/small/Form.vue";
 
   import ImageTest1 from "@/../public/images/image-test-1.png";
 
@@ -30,6 +33,7 @@
     inputRadio: '-',
     textarea: 'This is a text',
     select: 'Option 2',
+    name: ''
   });
 
   const elements = {
@@ -115,11 +119,21 @@
       width: 250,
       height: 216,
     },
+    "form": {
+      id: 'upload',
+      method: 'post' as const,
+      enctype: 'multipart/form-data' as const,
+      acceptCharset: 'UTF-8'
+    }
   }
 
   function onButtonClick(event: MouseEvent) {
     form['button'] += 1
-  } 
+  }
+
+  function onSubmit(event: SubmitEvent) {
+    console.log("form submitted")
+  }
 </script>
 
 <template>
@@ -195,6 +209,16 @@
       <div>
         <Img :attributes="elements['img']" />
       </div>
+      <Div>
+        <Span :attributes="{ html: 'span' }" />
+        <Div><P :attributes="elements['p']" /></Div>
+      </Div>
+      <Div>
+        <Form :attributes="elements['form']" @submit="onSubmit">
+          <InputText v-model="form.name" :attributes="{ name: 'name', placeholder: 'Your name' }" />
+          <Button :attributes="{ text: 'Send', type: 'submit' }" />
+        </Form>
+      </Div>
     </div>
   </section>
 </template>

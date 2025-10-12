@@ -95,10 +95,15 @@
     },
     "select": {
       name: "select",
-      option: [
+      options: [
         {html: "Select 1", value: "Option 1", disabled: true},
-        {html: "Select 2", value: "Option 2", selected: true},
-        {html: "Select 3", value: "Option 3"},
+        {
+          label: "Parameters",
+          options: [
+            {html: "Select 2", value: "Option 2", selected: true},
+            {html: "Select 3", value: "Option 3"},
+          ]
+        }
       ]
     },
     "label": {

@@ -14,6 +14,15 @@
   }
 
   /**
+   * Optgroup Interface
+   */
+  interface OptgroupAttributes {
+    label: string
+    disabled?: boolean
+    options: OptionAttributes[]
+  }
+
+  /**
    * Select Interface
    */
   interface SelectAttributes {
@@ -25,7 +34,7 @@
     required?: boolean
     tabindex?: number | string
     size?: number
-    option?: OptionAttributes[]
+    options?: (OptionAttributes | OptgroupAttributes)[]
   }
 
   /**
@@ -47,6 +56,7 @@
     required: true,
     tabindex: undefined,
     size: undefined,
+    options: [],
   }
 
   /**
@@ -60,7 +70,7 @@
   /**
    * Select Define Model
    */
-  const modelValue = defineModel<String>();
+  const modelValue = defineModel<string | string[]>();
 </script>
 
 <template>
@@ -76,17 +86,34 @@
     :size="attributes.size"
     v-model="modelValue"
   >
-    <option
-      v-for="elem in attributes.option"
-      :key="elem.id ?? elem.html"
-      :disabled="elem.disabled"
-      :id="elem.id"
-      :label="elem.label"
-      :selected="elem.selected"
-      :value="elem.value"
-      v-html="elem.html"
-    >
-    </option>
+    <template v-for="(item, index) in attributes.options" :key="index">
+      <optgroup
+        v-if="'options' in item"
+        :label="item.label"
+        :disabled="item.disabled"
+      >
+        <option
+          v-for="opt in item.options"
+          :key="opt.id ?? opt.value ?? opt.html"
+          :disabled="opt.disabled"
+          :id="opt.id"
+          :label="opt.label"
+          :selected="opt.selected"
+          :value="opt.value"
+          v-html="opt.html"
+        ></option>
+      </optgroup>
+      <option
+        v-else
+        :key="item.id ?? item.value ?? item.html"
+        :disabled="item.disabled"
+        :id="item.id"
+        :label="item.label"
+        :selected="item.selected"
+        :value="item.value"
+        v-html="item.html"
+      ></option>
+    </template>
   </select>
 </template>
 

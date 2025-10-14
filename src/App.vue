@@ -18,6 +18,7 @@
   import Div from "@/components/small/Div.vue";
   import Span from "@/components/small/Span.vue";
   import Form from "@/components/small/Form.vue";
+  import Progress from "@/components/small/Progress.vue";
 
   import ImageTest1 from "@/../public/images/image-test-1.png";
 
@@ -33,7 +34,8 @@
     inputRadio: '-',
     textarea: 'This is a text',
     select: 'Option 2',
-    name: ''
+    name: '',
+    progress: '75',
   });
 
   const elements = {
@@ -223,6 +225,11 @@
           <InputText v-model="form.name" :attributes="{ name: 'name', placeholder: 'Your name' }" />
           <Button :attributes="{ text: 'Send', type: 'submit' }" />
         </Form>
+      </Div>
+      <Div>
+        <Progress :attributes="{ id: 'progress', max: 100 }" v-model="form.progress" />
+        {{ form.progress }} %
+        <InputText :attributes="{ type: 'number' as const, name: 'progress-number', max: 100 }" v-model="form.progress" />
       </Div>
     </div>
   </section>

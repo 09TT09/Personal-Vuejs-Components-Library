@@ -19,7 +19,8 @@
   import Span from "@/components/small/Span.vue";
   import Form from "@/components/small/Form.vue";
   import Progress from "@/components/small/Progress.vue";
-  import Meter from "./components/small/Meter.vue";
+  import Meter from "@/components/small/Meter.vue";
+  import Output from "@/components/small/Output.vue";
 
   import ImageTest1 from "@/../public/images/image-test-1.png";
 
@@ -38,6 +39,7 @@
     name: '',
     progress: '75',
     meter: '25',
+    output: '10',
   });
 
   const elements = {
@@ -237,6 +239,9 @@
         <Meter v-model="form.meter" :attributes="{ id: 'cpu', min: 0, max: 100, low: 30, high: 80, optimum: 50 }" />
         {{ form.meter }} %
         <InputText :attributes="{ type: 'number' as const, name: 'meter-number', max: 100 }" v-model="form.meter" />
+      </Div>
+      <Div>
+        <Output v-model="form.output" />
       </Div>
     </div>
   </section>

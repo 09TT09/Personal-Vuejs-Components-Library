@@ -20,7 +20,7 @@
    * Button Props
    */
   const props = defineProps<{
-    'attributes': ButtonAttributes
+    attributes: ButtonAttributes
   }>()
 
   /**

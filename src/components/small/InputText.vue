@@ -43,7 +43,7 @@
    * InputText Props
    */
   const props = defineProps<{
-    'attributes': InputTextAttributes
+    attributes: InputTextAttributes
   }>()
 
   /**

@@ -14,7 +14,7 @@
    * Label Props
    */
   const props = defineProps<{
-    'attributes': LabelAttributes
+    attributes: LabelAttributes
   }>()
 
   /**

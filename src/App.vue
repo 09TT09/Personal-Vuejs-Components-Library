@@ -21,6 +21,7 @@
   import Progress from "@/components/small/Progress.vue";
   import Meter from "@/components/small/Meter.vue";
   import Output from "@/components/small/Output.vue";
+  import Header from "@/components/small/Header.vue";
 
   import ImageTest1 from "@/../public/images/image-test-1.png";
 
@@ -242,6 +243,11 @@
       </Div>
       <Div>
         <Output v-model="form.output" />
+      </Div>
+      <Div>
+        <Header>
+          <P :attributes="{ html: 'Header' }"></P>
+        </Header>
       </Div>
     </div>
   </section>

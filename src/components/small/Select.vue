@@ -41,7 +41,7 @@
    * Select Props
    */
   const props = defineProps<{
-    'attributes': SelectAttributes
+    attributes: SelectAttributes
   }>()
 
   /**

@@ -19,7 +19,7 @@
    * InputCheckbox Props
    */
   const props = defineProps<{
-    'attributes': InputCheckboxAttributes
+    attributes: InputCheckboxAttributes
   }>()
 
   /**

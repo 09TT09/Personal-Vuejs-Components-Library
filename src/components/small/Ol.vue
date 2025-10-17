@@ -25,7 +25,7 @@
    * Ol Props
    */
   const props = defineProps<{
-    'attributes': OlAttributes
+    attributes: OlAttributes
   }>()
 
   /**

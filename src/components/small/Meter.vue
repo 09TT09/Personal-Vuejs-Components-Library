@@ -18,7 +18,7 @@
    * Meter Props
    */
   const props = defineProps<{
-    'attributes': MeterAttributes
+    attributes: MeterAttributes
   }>()
 
   /**

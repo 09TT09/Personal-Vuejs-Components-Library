@@ -15,7 +15,7 @@
    * H Props
    */
   const props = defineProps<{
-    'attributes': HAttributes
+    attributes: HAttributes
   }>()
 
   /**

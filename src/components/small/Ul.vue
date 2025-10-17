@@ -22,7 +22,7 @@
    * Ul Props
    */
   const props = defineProps<{
-    'attributes': UlAttributes
+    attributes: UlAttributes
   }>()
 
   /**

@@ -19,7 +19,7 @@
    * InputRadio Props
    */
   const props = defineProps<{
-    'attributes': InputRadioAttributes
+    attributes: InputRadioAttributes
   }>()
 
   /**

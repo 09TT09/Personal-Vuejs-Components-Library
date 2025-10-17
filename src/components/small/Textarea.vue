@@ -22,7 +22,7 @@
    * Textarea Props
    */
   const props = defineProps<{
-    'attributes': TextareaAttributes
+    attributes: TextareaAttributes
   }>()
 
   /**

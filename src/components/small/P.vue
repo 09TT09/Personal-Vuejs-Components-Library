@@ -14,7 +14,7 @@
    * P Props
    */
   const props = defineProps<{
-    'attributes': PAttributes
+    attributes: PAttributes
   }>()
 
   /**

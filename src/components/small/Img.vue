@@ -26,7 +26,7 @@
    * Img Props
    */
   const props = defineProps<{
-    'attributes': ImgAttributes
+    attributes: ImgAttributes
   }>()
 
   /**

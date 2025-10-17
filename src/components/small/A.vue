@@ -20,7 +20,7 @@
    * A Props
    */
   const props = defineProps<{
-    'attributes': AAttributes
+    attributes: AAttributes
   }>()
 
   /**

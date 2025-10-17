@@ -14,7 +14,7 @@
    * Progress Props
    */
   const props = defineProps<{
-    'attributes': ProgressAttributes
+    attributes: ProgressAttributes
   }>()
 
   /**

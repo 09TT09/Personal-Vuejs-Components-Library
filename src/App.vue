@@ -22,7 +22,8 @@
   import Meter from "@/components/small/Meter.vue";
   import Output from "@/components/small/Output.vue";
   import Header from "@/components/small/Header.vue";
-  import Footer from "./components/small/Footer.vue";
+  import Footer from "@/components/small/Footer.vue";
+  import Section from "@/components/small/Section.vue";
 
   import ImageTest1 from "@/../public/images/image-test-1.png";
 
@@ -254,6 +255,11 @@
         <Footer>
           <P :attributes="{ html: 'Footer' }"></P>
         </Footer>
+      </Div>
+      <Div>
+        <Section>
+          <P :attributes="{ html: 'Section' }"></P>
+        </Section>
       </Div>
     </div>
   </section>

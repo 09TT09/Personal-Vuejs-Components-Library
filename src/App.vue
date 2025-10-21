@@ -24,6 +24,7 @@
   import Header from "@/components/small/Header.vue";
   import Footer from "@/components/small/Footer.vue";
   import Section from "@/components/small/Section.vue";
+  import Article from "@/components/small/Article.vue";
 
   import ImageTest1 from "@/../public/images/image-test-1.png";
 
@@ -260,6 +261,11 @@
         <Section>
           <P :attributes="{ html: 'Section' }"></P>
         </Section>
+      </Div>
+      <Div>
+        <Article>
+          <P :attributes="{ html: 'Article' }"></P>
+        </Article>
       </Div>
     </div>
   </section>

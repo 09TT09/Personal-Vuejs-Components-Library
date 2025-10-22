@@ -25,6 +25,7 @@
   import Footer from "@/components/small/Footer.vue";
   import Section from "@/components/small/Section.vue";
   import Article from "@/components/small/Article.vue";
+  import Nav from "@/components/small/Nav.vue";
 
   import ImageTest1 from "@/../public/images/image-test-1.png";
 
@@ -152,7 +153,7 @@
 </script>
 
 <template>
-  <section>
+  <section class="main">
     <h2>Small components</h2>
     <div class="small-components-box">
       <div style="display: flex;  align-items:center; gap: 30px;">
@@ -267,6 +268,11 @@
           <P :attributes="{ html: 'Article' }"></P>
         </Article>
       </Div>
+      <Div>
+        <Nav>
+          <P :attributes="{ html: 'Nav' }"></P>
+        </Nav>
+      </Div>
     </div>
   </section>
 </template>
@@ -277,7 +283,7 @@
     text-align: center;
   }
 
-  section {
+  .main {
     padding: 20px;
     border-radius: 3px;
     border: solid rgb(37, 37, 37) 1px;

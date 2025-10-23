@@ -26,6 +26,7 @@
   import Section from "@/components/small/Section.vue";
   import Article from "@/components/small/Article.vue";
   import Nav from "@/components/small/Nav.vue";
+  import Video from "@/components/small/Video.vue";
 
   import ImageTest1 from "@/../public/images/image-test-1.png";
 
@@ -272,6 +273,15 @@
         <Nav>
           <P :attributes="{ html: 'Nav' }"></P>
         </Nav>
+      </Div>
+      <Div>
+        <Video :attributes="{
+          width: 640,
+          height: 360,
+          sources: [
+            { src: '...', type: 'video/mp4' }
+          ]
+        }" />
       </Div>
     </div>
   </section>

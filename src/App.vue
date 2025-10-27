@@ -27,6 +27,7 @@
   import Article from "@/components/small/Article.vue";
   import Nav from "@/components/small/Nav.vue";
   import Video from "@/components/small/Video.vue";
+  import Details from "@/components/small/Details.vue";
 
   import ImageTest1 from "@/../public/images/image-test-1.png";
 
@@ -282,6 +283,11 @@
             { src: '...', type: 'video/mp4' }
           ]
         }" />
+      </Div>
+      <Div>
+        <Details :attributes="{ summary: { text: 'Summary' } }">
+          <P :attributes="{ html: 'details' }"></P>
+        </Details>
       </Div>
     </div>
   </section>

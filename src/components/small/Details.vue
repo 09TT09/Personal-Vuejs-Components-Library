@@ -21,7 +21,7 @@
   }
 
   /**
-   * Props definition
+   * Details Props
    */
   const props = defineProps<{
     attributes: DetailsAttributes

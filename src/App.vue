@@ -28,6 +28,7 @@
   import Nav from "@/components/small/Nav.vue";
   import Video from "@/components/small/Video.vue";
   import Details from "@/components/small/Details.vue";
+  import Figure from "@/components/small/Figure.vue";
 
   import ImageTest1 from "@/../public/images/image-test-1.png";
 
@@ -288,6 +289,14 @@
         <Details :attributes="{ summary: { text: 'Summary' } }">
           <P :attributes="{ html: 'details' }"></P>
         </Details>
+      </Div>
+      <Div>
+        <Figure :attributes="{ id: 'mountain-figure', figcaption: { id: 'caption1' } }">
+          <Img class="img" :attributes="elements['img']" />
+          <template v-slot:figcaption>
+            Figcaption
+          </template>
+        </Figure>
       </Div>
     </div>
   </section>
